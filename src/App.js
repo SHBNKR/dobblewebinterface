@@ -3,10 +3,14 @@ import React, { useRef, useState, useEffect } from "react";
 import * as tf from "@tensorflow/tfjs";
 // 1. TODO - Import required model here
 // e.g. import * as tfmodel from "@tensorflow-models/tfmodel";
+import * as cocossd from "@tensorflow-models/coco-ssd";
 import Webcam from "react-webcam";
 import "./App.css";
 // 2. TODO - Import drawing utility here
-// e.g. import { drawRect } from "./utilities";
+import { drawRect } from "./utilities";
+import {  Route, Routes, Link} from "react-router-dom";
+import {Header, Footer, PageTitle} from './components/common';
+
 
 function App() {
   const webcamRef = useRef(null);
@@ -16,6 +20,8 @@ function App() {
   const runCoco = async () => {
     // 3. TODO - Load network 
     // e.g. const net = await cocossd.load();
+    const net = await cocossd.load();
+
     
     //  Loop and detect hands
     setInterval(() => {
@@ -45,12 +51,14 @@ function App() {
 
       // 4. TODO - Make Detections
       // e.g. const obj = await net.detect(video);
+      const obj = await net.detect(video);
+      console.log(obj);
 
       // Draw mesh
       const ctx = canvasRef.current.getContext("2d");
 
       // 5. TODO - Update drawing utility
-      // drawSomething(obj, ctx)  
+        drawRect(obj, ctx);
     }
   };
 
@@ -58,8 +66,25 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <Webcam
+      <Header/>
+
+       <Routes>
+             <Route path="/contact">
+            </Route>
+            <Route path="/blog">
+            </Route>
+            <Route path="/shop">
+            </Route>
+            <Route path="/portfolio">
+            </Route>
+            <Route path="/about">
+            </Route>
+            <Route path="/">
+            </Route> 
+      </Routes> 
+
+       <header> </header> 
+       {/* <Webcam
           ref={webcamRef}
           muted={true} 
           style={{
@@ -73,7 +98,7 @@ function App() {
             width: 640,
             height: 480,
           }}
-        />
+        /> 
 
         <canvas
           ref={canvasRef}
@@ -88,8 +113,9 @@ function App() {
             width: 640,
             height: 480,
           }}
-        />
-      </header>
+        /> */}
+        <br></br>
+      <Footer/>
     </div>
   );
 }
