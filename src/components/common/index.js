@@ -1,12 +1,13 @@
 import Header from './header';
 import Navbar from './navbar';
 import Footer from './footer';
-import PageTitle  from './page-title';
-
+import Play  from './play';
+import GameInstructions from './gameinstructions';
 
 export {
     Header,
     Navbar,
-    PageTitle,
+    Play,
+    GameInstructions,
     Footer
 }

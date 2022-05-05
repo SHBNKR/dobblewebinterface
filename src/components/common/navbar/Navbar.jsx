@@ -6,12 +6,11 @@ function Navbar() {
 
     return(
         <section className="navbar">
-        <Link to="/" className="navbar-item">Home</Link>
-        <Link to="/about" className="navbar-item">About</Link>
-        <Link to="/portfolio" className="navbar-item">Portfolio</Link>
-        <Link to="/shop" className="navbar-item">Shop</Link>
-        <Link to="/blog" className="navbar-item">Blog</Link>
-        <Link to="/contact" className="navbar-item">Contact</Link>
+        <Link to="/" className="navbar-item">PLAY</Link>
+        <Link to="/statistics" className="navbar-item">Statistics</Link>
+        <Link to="/gameinstructions" className="navbar-item">game instructions</Link>
+        <Link to="/techbackground" className="navbar-item">Technological background</Link>
+        <Link to="/aboutus" className="navbar-item">About us</Link>
         </section>
     )
 }

@@ -5,6 +5,7 @@
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+ 
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -35,4 +36,34 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.scoreboard {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	width: 300px;
+	font-family: 'Quick<sand', sans-serif;
+}
+
+.scoreboard__name,
+.scoreboard__score {
+	padding: 10px;
+	text-align: center;
+}
+
+.scoreboard__name {
+	font-weight: bold;
+	border-bottom: 1px solid #ddd;
+}
+
+.scoreboard__name--one {
+	color: #009578;
+}
+
+.scoreboard__name--two {
+	color: #2d0095;
+}
+
+.scoreboard__score {
+	font-size: 2em;
 }
